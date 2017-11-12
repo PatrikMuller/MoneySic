@@ -1,0 +1,24 @@
+﻿@model IList<MoneySic.Models.Pessoa>
+
+@Html.ActionLink("Novo", "Form", "Pessoa");
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+            {
+            <tr>
+                <td>@p.IdPessoa</td>
+                <td>@p.Nome</td>
+                <td>@Html.ActionLink("Remover", "Remove", new { id = p.IdPessoa })</td>
+                <td>@Html.ActionLink("Editar", "Form", new { id = p.IdPessoa })</td>
+            </tr>
+        }
+    </tbody>
+</table>

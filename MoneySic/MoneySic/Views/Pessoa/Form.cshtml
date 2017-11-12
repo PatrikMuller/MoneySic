@@ -1,0 +1,13 @@
+﻿@model MoneySic.Models.Pessoa
+
+@using (Html.BeginForm("Grava", "Pessoa", FormMethod.Post))
+{
+    @Html.LabelFor(p => p.IdPessoa, "Id:")
+    @Html.TextBoxFor(p => p.IdPessoa, new { @readonly = "true" })
+
+    @Html.LabelFor(p => p.Nome, "Nome:")
+    @Html.TextBoxFor(p => p.Nome)
+    @Html.ValidationMessage("Nome")
+
+    <input type="submit" value="Cadastrar" />
+}

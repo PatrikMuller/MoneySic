@@ -1,0 +1,29 @@
+﻿@model MoneySic.Models.PessoaJuridica
+
+@using (Html.BeginForm("Grava", "PessoaJuridica", FormMethod.Post))
+{
+    @Html.LabelFor(p => p.IdPessoa, "Id:")
+    @Html.TextBoxFor(p => p.IdPessoa, new { @readonly = "true" })
+
+    @Html.LabelFor(p => p.Nome, "Nome:")
+    @Html.TextBoxFor(p => p.Nome)
+    @Html.ValidationMessage("Nome")
+    
+    @Html.LabelFor(p => p.Cnpj, "Cnpj:")
+    @Html.TextBoxFor(p => p.Cnpj)
+    @Html.ValidationMessage("Cnpj")
+
+    @Html.LabelFor(p => p.Ie, "Inscrição Estadual:")
+    @Html.TextBoxFor(p => p.Ie)
+    @Html.ValidationMessage("Ie")
+
+    @Html.LabelFor(p => p.Fantasia, "Nome Fantasia:")
+    @Html.TextBoxFor(p => p.Fantasia)
+    @Html.ValidationMessage("Fantasia")
+
+    @Html.LabelFor(p => p.DataConstituicao, "Data de Constituição:")
+    @Html.TextBoxFor(p => p.DataConstituicao, new { type = "date" })
+    @Html.ValidationMessage("DataConstituição")
+
+    <input type="submit" value="Cadastrar" />
+}

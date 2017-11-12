@@ -1,0 +1,42 @@
+﻿@model IList<MoneySic.Models.PessoaFisica>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Novo", "Form", "PessoaFisica");
+
+<div class="row">
+    <div class="col-lg-6">
+        <h2>Lista de Pessoa Fisica</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Cpf</th>
+                        <th>Nome Mãe</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in Model)
+                    {
+                        <tr>
+                            <td>@p.IdPessoa</td>
+                            <td>@p.Nome</td>
+                            <td>@p.Cpf</td>
+                            <td>@p.NomeMae</td>
+                            <td>@Html.ActionLink("Remover", "Remove", new { id = p.IdPessoa })</td>
+                            <td>@Html.ActionLink("Editar", "Form", new { id = p.IdPessoa })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
